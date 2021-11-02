@@ -19,9 +19,8 @@ public class JuegoParesParteA {
 
             System.out.println("Menú de opciones");
             System.out.println("-------------------------");
-            System.out.println("1.Manual");
-            System.out.println("2.Automatico");
-            System.out.println("3. Finalizar");
+            System.out.println("1.jugar");
+            System.out.println("2. Salir");
             
             System.out.println("Elija una opcion: ");
             opcion = entrada.nextInt();
@@ -49,13 +48,14 @@ public class JuegoParesParteA {
                               //el jugador A eliga un numero
                              System.out.println("JugadorA.Elija un numero: ");
                              numeroA=entrada.nextInt();
-                          } while(numeroA>=0 && numeroA<=5);
+                             
+                          } while(numeroA<0 || numeroA>5);
                           
                           do{
                               //el jugador B lo queda una opcion
                             System.out.println("JugadorB:Eliga un numero: ");
                             numeroB=entrada.nextInt(); 
-                          }while(numeroB>=0 && numeroB<=5);  
+                          }while(numeroB<0 || numeroB>5);  
                             
                             //hago la suma de numeros que el jugadores eliga
                             suma=numeroA+numeroB;
@@ -64,8 +64,13 @@ public class JuegoParesParteA {
                                if(esPar==true){
                                  System.out.println("el jugador A que gana ");
                                }
-                            }else{//si no el jogador B gana
-                                System.out.println("el jugador B que gana");
+                            }else{ // la suma impar  
+                                if(esPar==true){//es jugadorA pierde entonces B gana
+                                     System.out.println("el jugador B que gana");
+                                }else{
+                                     System.out.println("el jugador A que gana ");
+                                }
+                               
                             }                   
                  
             break;
@@ -78,7 +83,7 @@ public class JuegoParesParteA {
                  System.out.println("eliger opcion valida");
         }
 
-        } while (opcion!= 3);
+        } while (opcion!= 2);
          
         System.out.println(" Finalizar");
 
