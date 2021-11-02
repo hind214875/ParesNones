@@ -49,12 +49,13 @@ public class JuegoParesParteA {
                               //el jugador A eliga un numero
                              System.out.println("JugadorA.Elija un numero: ");
                              numeroA=entrada.nextInt();
-                             
-                            //el jugador B lo queda una opcion
+                          } while(numeroA>=0 && numeroA<=5);
+                          
+                          do{
+                              //el jugador B lo queda una opcion
                             System.out.println("JugadorB:Eliga un numero: ");
                             numeroB=entrada.nextInt(); 
-                            
-                           }while(numeroA>=0 && numeroA<=5 || numeroB>=0 && numeroB<=5);
+                          }while(numeroB>=0 && numeroB<=5);  
                             
                             //hago la suma de numeros que el jugadores eliga
                             suma=numeroA+numeroB;
