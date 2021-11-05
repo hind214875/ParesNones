@@ -63,27 +63,18 @@ public class Parte2 {
                             jugadorA = sc.nextInt();
                         } while (jugadorA < 0 || jugadorA > 10);
 
-                        // genera numero aleatorio entre 0 y 10 con Classe Random con 10 incluidos 
-                        if (esPare == true) {// si el jugador A elige Pare entonces la maquina tiene que coger nones
-                            do {//se repita hasta que el numero es impare
-                                System.out.println("JugadorB:Introduce un numero: ");
-                                jugadorB = numeroAleatorio.nextInt(11);
-                                System.out.println(jugadorB);
-                            } while (jugadorB % 2 == 0);
-
-                        } else {//el contrario
-                            do {
-                                System.out.println("JugadorB:Introduce un numero: ");
-                                jugadorB = numeroAleatorio.nextInt(11);
-                                System.out.println(jugadorB);
-                            } while (!(jugadorB % 2 == 0));
-                        }
-             
+                        // genera numero aleatorio entre 0 y 10 con Classe Random con 10 incluidos                           
+                        System.out.println("JugadorB:Introduce un numero: ");
+                        jugadorB = numeroAleatorio.nextInt(11);
+                        System.out.println(jugadorB);
+                        
                         suma = jugadorA + jugadorB;
                         System.out.println("la suma es :" +suma);
                         if (suma % 2 == 0) {//si suma is pares
-                            if (esPare == true) {//y esPare es true entonces jugador A gana
+                            if (esPare) {//y esPare es true entonces jugador A gana
                                 System.out.println("el jugador A que gana");
+                            }else{
+                                System.out.println("el jugador B que gana");
                             }
                         } else {
                             //la suma impares
